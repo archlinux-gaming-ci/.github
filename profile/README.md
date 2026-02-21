@@ -8,7 +8,14 @@ The packages are built automatically via GitHub Actions and hosted on GitHub Pag
 
 To add this repository to your system, follow these steps:
 
-### 1. Add to pacman.conf
+### 1. Import and Trust the Repository PGP Key
+
+```bash
+curl -sS https://raw.githubusercontent.com/archlinux-gaming-ci/.github/refs/heads/main/repo-public.key | sudo pacman-key --add -
+sudo pacman-key --lsign-key DBF8337047E5683F
+```
+
+### 2. Add to pacman.conf
 
 Edit your `/etc/pacman.conf` file:
 
@@ -20,11 +27,11 @@ Add the following lines to the end of the file.
 
 ```
 [archlinux-gaming-ci]
-SigLevel = Optional TrustAll
+SigLevel = Required
 Server = https://archlinux-gaming-ci.github.io/x86_64
 ```
 
-### 2. Update Database
+### 3. Update Database
 
 Sync your pacman database to pick up the new repository:
 
