@@ -23,7 +23,7 @@ Edit your `/etc/pacman.conf` file:
 sudo nano /etc/pacman.conf
 ```
 
-Add the following lines to the end of the file.
+Add the following lines to the end of the file:
 
 ```
 [archlinux-gaming-ci]
